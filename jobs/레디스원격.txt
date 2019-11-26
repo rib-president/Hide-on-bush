@@ -1,0 +1,8 @@
+sudo vi /etc/redis/redis6480.conf
+여기서 어쩌구 yes를 no로 바꿈
+
+sudo systemctl restart redis6480.service
+
+한담에
+
+멀리서 접속하면 됨
