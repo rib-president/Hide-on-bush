@@ -1,0 +1,172 @@
+https://github.com/yeephycho/nasnet-tensorflow 참조
+
+0.준비
+
+mkdir train
+mkdir inference
+mkdir demo
+mkdir demo/img demo/labelmap demo/result
+
+vi make_label.py
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+import os
+
+# define your src_path
+src_path = '/your raw image dir'
+
+folder_list = sorted(os.listdir(src_path))
+
+for folder in folder_list :
+    folder_path = os.path.join(src_path, folder)
+    path, name = os.path.split(folder_path)
+    with open('./demo/labelmap/label.txt', 'a') as f:
+        f.write(name + '\n')
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1.dataset 만들기
+
+vi datasets/customized.py
+-line 36 : 전체 이미지 중 train/val set 개수
+-line 39 : class 개수
+
+vi datasets/convert_customized.py
+-line 61 : 전체 이미지 중 val set 개수
+-line 67 : _NUM_SHARD = tfrecord 파일 1개당 100mb 정도
+
+실행
+DATASET_DIR=/your raw image dir
+
+python convert_customized_data.py \
+    --dataset_name=customized \
+    --dataset_dir="${DATASET_DIR}"
+
+===>raw image dir에 tfrecord파일, label.txt생성됨. dataset 폴더 생성해서 옮기기
+
+
+2.training
+
+vi train_image_classifier.py
+-line 37 num_clones : multi GPU num(default 1, use one GPU)
+-line 40 clone_on_cpu : false!!!!!!!!!!
+-line 194 or 195 max_number_of_steps : train 횟수(None은 무한)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+resource exhaust error 뜰 때
+-line 190 : batch_size 줄이기(ex. 4, 8)
+===>그래도 안되면 line 51 num_readers : 1, line 55 num_preprocessing_threads : 1
+
+
+
+실행
+DATASET_DIR=/your dataset dir
+TRAIN_DIR=./train
+
+python train_image_classifier.py \
+    --train_dir=${TRAIN_DIR} \
+    --dataset_name=customized \
+    --dataset_split_name=train \
+    --dataset_dir=${DATASET_DIR} \
+    --model_name=nasnet_mobile or nasnet_large
+
+
+
+2-1.fine-tune from ImageNet pre-trained checkpoint
+mkdir pre-trained
+sh download_pretrained_model.sh
+
+
+실행
+DATASET_DIR=/your dataset dir
+TRAIN_DIR=./train
+CHECKPOINT_PATH=./pre-trained/nasnet-a_mobile_04_10_2017/model.ckpt
+ or
+CHECKPOINT_PATH=./pre-trained/nasnet-a_large_04_10_2017/model.ckpt
+
+python train_image_classifier.py \
+    --train_dir=${TRAIN_DIR} \
+    --dataset_dir=${DATASET_DIR} \
+    --dataset_name=customized \
+    --dataset_split_name=train \
+    --model_name=nasnet_mobile or nasnet_large \
+    --checkpoint_path=${CHECKPOINT_PATH} \
+    --checkpoint_exclude_scopes=final_layer,aux_7 or aux_11(nasnet_large일 때) \
+    --trainable_scopes=final_layer,aux_7 or aux_11(nasnet_large일 때)
+
+
+
+2-2.training 이어서 하기
+vi train/checkpoint
+-line 1 mode_checkpoint_path : 이어서 training하려는 모델과 일치시키기
+-맨 마지막줄 all_model_checkpoint_paths: 이어서 training하려는 모델과 일치시키기
+
+
+실행
+DATASET_DIR=/your dataset dir
+TRAIN_DIR=./train
+CHECKPOINT_PATH=./train/이어서 training하고 싶은 모델 ex)model.ckpt-29735
+
+python train_image_classifier.py \
+    --train_dir=${TRAIN_DIR} \
+    --dataset_dir=${DATASET_DIR} \
+    --dataset_name=customized \
+    --dataset_split_name=train \
+    --model_name=nasnet_mobile or nasnet_large \
+    --checkpoint_path=${CHECKPOINT_PATH} \
+    --max_number_of_steps=추가로 training하고 싶은 횟수 \
+    --checkpoint_exclude_scopes=final_layer,aux_7(nasnet_mobile일 때) or aux_11(nasnet_large일 때)
+#   --trainable_scopes=final_layer,aux_7(nasnet_mobile일 때) or aux_11(nasnet_large일 때)
+
+3.evaluation
+CHECKPOINT_FILE=./train/evaluation하고 싶은 모델 ex)model.ckpt-29735
+
+python eval_image_classifier.py \
+    --alsologtostderr \
+    --checkpoint_path=${CHECKPOINT_FILE} \
+    --dataset_dir=/your dataset dir \
+    --dataset_name=customized \
+    --dataset_split_name=validation \
+    --model_name=nasnet_mobile or nasnet_large
+
+
+
+4.graph생성(inference 용)
+vi export_inference_graph.py
+-line 112 num_classes: class 개수
+
+실행
+python export_inference_graph.py \
+  --alsologtostderr \
+  --model_name=nasnet_mobile or nasnet_large \
+  --output_file=./inference/nasnet_mobile_inf_graph.pb or nasnet_large_inf_graph.pb
+
+
+python freeze_graph.py \
+  --input_graph=./inference/nasnet_mobile_inf_graph.pb or nasnet_large_inf_graph.pb \
+  --input_checkpoint=./train/your model name ex)model.ckpt-29735 \
+  --input_binary=true \
+  --output_graph=./inference/frozen_nasnet_mobile.pb or frozen_nasnet_large.pb \
+  --output_node_names=final_layer/predictions
+
+
+5.inference
+<조건>
+-input image size : 331*331 이상(nasnet_large), 224*224 이상(nasnet_mobile)
+-input image는 jpeg만 가능
+
+
+/demo/img에 inference할 이미지 넣기
+
+vi image_inference.py
+-nasnet_large일 땐 그대로 사용
+-nasnet_mobile일 땐 331->224, 165,166->112 로 변경
+
+실행
+python image_inference.py
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+"assign requires shapes of both tensors to match."
+
+error뜨면 기존 train된 모델있는지 찾아보고 지우기(train, inference 폴더째로 지우기)
