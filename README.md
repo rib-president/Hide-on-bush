@@ -2,5 +2,5 @@
 # **LAB**
 
 
-### testing, bench marking vision deep learning framework
+### testing, customizing, bench marking vision deep learning framework
 ### and etc. python code
