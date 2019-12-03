@@ -1,3 +1,8 @@
+### split and merge folder to number of what you want.
+### usage
+### python folder_split_or_merge_argparse.py split --root {folder} --divide_num {number of divide} --total_num {subfolder_num}
+### python folder_split_or_merge_argparse.py merge --root {folder}
+
 import os
 import shutil
 import sys
