@@ -1,5 +1,5 @@
 
-# **model of Recognition and Classification of product with the purpose of automatic payment for Distributors**
+# **Model of Recognition and Classification of product with the purpose of automatic payment for Distributors**
 
 
 
@@ -17,9 +17,11 @@ The prototype is designed to be implemented in the large scale distributor or re
 * Reduce payment process
 
 > No lift up product, no find barcode, no scan barcode using reader.
+
 > just show purchasing product, end.
 
 * low cost about man power
 
 > Before prototype, always one counter one man. Now, staffs come only when customer who first time this type of purchase called.
+
 > stay will be unnecessary.
