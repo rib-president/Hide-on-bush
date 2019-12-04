@@ -1,5 +1,5 @@
 
-# **Model of Recognition and Classification of product with the purpose of automatic payment for Distributors**
+# **Model of Recognition and Classification of products with the purpose of automatic payment for Distributors**
 
 
 
