@@ -47,9 +47,9 @@ Collaborate object detection and classification to handled more big dataset, to 
 
 
 ## References
-Data preprocessing: [OpenCV](http://https://opencv.org)
-Object Detection: [Caffe](https://github.com/wupeng78/weiliu89-caffe), [MaskRCNN](https://github.com/matterport/Mask_RCNN)
-Classification: [Inception](https://www.tensorflow.org/hub/tutorials/image_retraining)
+Data preprocessing: [OpenCV](http://https://opencv.org)  
+Object Detection: [Caffe](https://github.com/wupeng78/weiliu89-caffe), [MaskRCNN](https://github.com/matterport/Mask_RCNN)  
+Classification: [Inception](https://www.tensorflow.org/hub/tutorials/image_retraining)  
 
 
 
