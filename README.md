@@ -40,7 +40,7 @@ Stages | Preprocessing | Object Detection | Product Classification
 
 
 ## Result
-
+![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/output.gif)
 
 
 
