@@ -3,13 +3,11 @@
 
 
 
-<hr>
-### Table of Contents.
-<hr>
+## Table of Contents.
 * About
 * Architecture
 * Result
 * Reference
 
 
-### About
+## About
