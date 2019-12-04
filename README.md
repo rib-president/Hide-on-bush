@@ -34,9 +34,9 @@ The prototype is designed to be implemented in the large scale distributor or re
 ## Architecture
 Stages | Preprocessing | Object Detection | Product Classification
 -------|---------------|------------------|------------------------
-ML Models | | SSD MaskRCNN | Inception MLP
-Libraries | OpenCV | Caffe Keras | Tensorflow Keras
-Language | Python | Python | Python
+*ML Models* | | SSD, MaskRCNN | Inception, MLP
+*Libraries* | OpenCV | Caffe, Keras | Tensorflow, Keras
+*Language* | Python | Python | Python
 
 
 ## Result
