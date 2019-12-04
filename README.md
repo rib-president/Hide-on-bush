@@ -1,6 +1,15 @@
 
-# **LAB**
+# **model of Recognition and Classification of product with the purpose of automatic payment for Distributors**
 
 
-### customize and test vision deep learning framework.
-### and etc. python code
+### Table of Contents.
+
+* About
+* Architecture
+* Result
+* Reference
+
+
+### About
+
+
