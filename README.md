@@ -42,8 +42,8 @@ Stages | Preprocessing | Object Detection | Product Classification
 ## Result
 ![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/output.gif)
 
-covered class of RCNN is proportionally small than CNN.
-collaborate object detection and classification to handled more big dataset, to made more accurate result.
+Covered class of RCNN is proportionally small than CNN.
+<hr/>Collaborate object detection and classification to handled more big dataset, to made more accurate result.
 
 
 
