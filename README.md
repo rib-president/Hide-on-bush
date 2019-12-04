@@ -23,3 +23,8 @@ The prototype is designed to be implemented in the large scale distributor or re
 
 > Before prototype, always one counter one man. Now, staffs come only when customer who first time this type of purchase called.
 > stay will be unnecessary.
+
+* connectivity to mobile pay
+
+> mobile is not simple calling machine. this can be identification, purchase measure.
+> if prototype connected mobile pay, would be more convenient, fast and secure.
