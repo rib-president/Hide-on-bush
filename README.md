@@ -21,6 +21,5 @@ The prototype is designed to be implemented in the large scale distributor or re
 
 * low cost about man power
 
-> Before prototype, always one counter one man. now, staffs come only when customer who first time this type of purchase called. stay will be unnecessary.
-
->
+> Before prototype, always one counter one man. Now, staffs come only when customer who first time this type of purchase called.
+> stay will be unnecessary.
