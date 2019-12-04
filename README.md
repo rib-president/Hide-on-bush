@@ -4,7 +4,7 @@
 
 
 ## Table of Contents.
-* About(#About)
+* About(#about)
 * Architecture
 * Result
 * Reference
