@@ -5,8 +5,8 @@
 
 ## Table of Contents.
 * [About](#about)
-* Architecture
-* Result
+* [Architecture](#architecture)
+* [Result](#result)
 * Reference
 
 
@@ -28,3 +28,25 @@ The prototype is designed to be implemented in the large scale distributor or re
 
 > mobile is not simple calling machine. this can be identification, purchase measure.
 > if prototype connected mobile pay, would be more convenient, fast and secure.
+
+
+
+## Architecture
+Stages | Preprocessing | Object Detection | Product Classification
+-------|---------------|------------------|------------------------
+ML Models | | SSD MaskRCNN | Inception MLP
+Libraries | OpenCV | Caffe Keras | Tensorflow Keras
+Language | Python | Python | Python
+
+
+## Result
+
+
+
+
+
+
+
+
+
+
