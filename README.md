@@ -34,7 +34,7 @@ SSD만으로 detection과 classification을 모두 진행했을 때 CNN 모델�
   
 **상품 인식 용도의 SSD + 인식된 상품을 분류하는 CNN** 형태의 엔진을 구성함으로 위의 문제 해결가능  
 SSD와 CNN 모델의 연결고리로 Redis 사용  
-![](/sample/checkout_solution.jpg/){:.align-center}
+![grab-landing-page](/sample/checkout_solution.jpg){:.align-center}
 
 
 
@@ -80,7 +80,7 @@ def contrast(self, image, filter_num):
 상품의 좌표정보가 있는 xml파일과 이미지를 이용하여 Caffe SSD 학습
   
   
-![](/sample/ssd_xml.jpg/)
+![grab-landing-page](/sample/ssd_xml.jpg)
   
   
   
