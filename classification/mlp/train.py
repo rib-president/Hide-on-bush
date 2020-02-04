@@ -76,8 +76,6 @@ print("Score of model: %f" %score[1])
 print("\n%s: %.2f%%" % (model.metrics_names[1], score[1]*100))
 
 # save model
-#filename = optimizer_name+"_" +str(dense_num)+"_early_0513_mask_350"
-#filename = "adamax_cali_"+str(cluster_size)
 filename = sys.argv[1]
 
 model_json = model.to_json()
