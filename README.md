@@ -1,8 +1,8 @@
 # **Model of Recognition and Classification of products with the purpose of automatic payment for Distributors**
+  
+  
 
-
-
-## Table of Contents
+## Table of Contents  
 * [About](#about)
 * [Problem-Solving](#problem-Solving)
 * [Architecture](#architecture)
@@ -158,6 +158,6 @@ obd.rpush('obd', image_json)
   
 
 ## References
-Data preprocessing: [OpenCV](http://https://opencv.org)  
+Data preprocessing: [OpenCV](http://opencv.org)  
 Object Detection: [Caffe](https://github.com/wupeng78/weiliu89-caffe)   
 Classification: [Inception](https://www.tensorflow.org/hub/tutorials/image_retraining)
