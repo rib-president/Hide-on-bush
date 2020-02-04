@@ -4,7 +4,7 @@
 
 ## Table of Contents  
 * [About](#about)
-* [Problem-Solving](#problem-Solving)
+/* * [Problem-Solving](#problem-Solving)*/
 * [How to](#how-to)
 * [Architecture](#architecture)
 * [Result](#result)
@@ -158,7 +158,7 @@ obd.rpush('obd', image_json)
   
   
 
-# References
+## References
 Data preprocessing: [OpenCV](http://opencv.org)  
 Object Detection: [Caffe](https://github.com/wupeng78/weiliu89-caffe)   
 Classification: [Inception](https://www.tensorflow.org/hub/tutorials/image_retraining)
