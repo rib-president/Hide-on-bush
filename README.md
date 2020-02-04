@@ -3,11 +3,11 @@
   
 
 ## Table of Contents  
-* [About](#about)
-* [Problem-Solving](#problem-Solving)
-* [Architecture](#architecture)
-* [Result](#result)
-* [References](#references)
+* [About](##about)
+* [Problem-Solving](##problem-Solving)
+* [Architecture](##architecture)
+* [Result](##result)
+* [References](##references)
   
 
 
