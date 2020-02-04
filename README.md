@@ -4,7 +4,6 @@
 
 ## Table of Contents  
 * [About](#about)
-/* * [Problem-Solving](#problem-Solving)*/
 * [How to](#how-to)
 * [Architecture](#architecture)
 * [Result](#result)
