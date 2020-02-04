@@ -3,12 +3,12 @@
   
 
 ## Table of Contents  
-* [About](/#about)
-* [Problem-Solving](/#problem-solving)
-* [How to](/#how-to)
-* [Architecture](/#architecture)
-* [Result](/#result)
-* [References](/#references)
+* [About](#about)
+* [Problem-Solving](#problem-solving)
+* [How to](#how-to)
+* [Architecture](#architecture)
+* [Result](#result)
+* [References](#references)
   
 
 
