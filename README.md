@@ -3,11 +3,12 @@
   
 
 ## Table of Contents  
-* [About](##about)
-* [Problem-Solving](##problem-Solving)
-* [Architecture](##architecture)
-* [Result](##result)
-* [References](##references)
+* [About](#about)
+* [Problem-Solving](#problem-Solving)
+* [How to](#how-to)
+* [Architecture](#architecture)
+* [Result](#result)
+* [References](#references)
   
 
 
@@ -30,7 +31,7 @@ object detection model과 classification model로 실시간 상품 인식/위치
 > 빠르고 안전한 모바일 결제와의 결합으로 이미지 인식 자동계산 프로그램의 장점을 더욱 높일 수 있습니다.  
   
   
-## Problem-Solving
+# Problem-Solving
 SSD만으로 detection과 classification을 모두 진행했을 때 CNN 모델에 비해,  
 1. 커버가능한 class의 수 적음
 2. class가 늘어날 수록 비교적 정확도 낮음
