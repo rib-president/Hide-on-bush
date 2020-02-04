@@ -37,15 +37,9 @@ SSD만으로 detection과 classification을 모두 진행했을 때 CNN 모델�
   
 **상품 인식 용도의 SSD + 인식된 상품을 분류하는 CNN** 형태의 엔진을 구성함으로 위의 문제 해결가능  
 SSD와 CNN 모델의 연결고리로 Redis 사용  
-![grab-landing-page](https://github.c# **Model of Recognition and Classification of products with the purpose of automatic payment for Distributors**
+![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/checkout_solution.JPG)
 
-OBOBOB
 
-OBOBOB## Table of Contents.
-* [About](#about)
-* [Architecture](#architecture)
-* [Result](#result)
-* [References](#references)om/rib-president/Hide-on-bush/blob/master/sample/checkout_solution.jpg)
 
 
 
