@@ -1,11 +1,14 @@
----
-title: "대형 유통기업 이미지 인식 자동계산 프로그램"
-excerpt: 상품 인식과 분류 모델을 이용한 자동계산 프로젝트
-toc: true
-toc_sticky: true
-categories:
-  - Project
----
+# **Model of Recognition and Classification of products with the purpose of automatic payment for Distributors**
+
+
+
+## Table of Contents.
+* [About](#about)
+* [Problem-Solving](#Problem-Solving)
+* [How to](#How to)
+* [Architecture](#architecture)
+* [Result](#result)
+* [References](#references)
 
 
 ## About
@@ -34,7 +37,15 @@ SSD만으로 detection과 classification을 모두 진행했을 때 CNN 모델�
   
 **상품 인식 용도의 SSD + 인식된 상품을 분류하는 CNN** 형태의 엔진을 구성함으로 위의 문제 해결가능  
 SSD와 CNN 모델의 연결고리로 Redis 사용  
-![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/checkout_solution.jpg){:.align-center}
+![grab-landing-page](https://github.c# **Model of Recognition and Classification of products with the purpose of automatic payment for Distributors**
+
+OBOBOB
+
+OBOBOB## Table of Contents.
+* [About](#about)
+* [Architecture](#architecture)
+* [Result](#result)
+* [References](#references)om/rib-president/Hide-on-bush/blob/master/sample/checkout_solution.jpg)
 
 
 
@@ -147,10 +158,12 @@ obd.rpush('obd', image_json)
 
 
 ## Result
-![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/output.gif){:.align-center}
+![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/output.gif)
 #### <center>realtime inference</center>
   
   
 
-## Code
-<https://github.com/rib-president/Model-of-Recognition-and-Classification-of-products/>
+## References
+Data preprocessing: [OpenCV](http://https://opencv.org)  
+Object Detection: [Caffe](https://github.com/wupeng78/weiliu89-caffe)   
+Classification: [Inception](https://www.tensorflow.org/hub/tutorials/image_retraining)
