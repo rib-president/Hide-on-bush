@@ -5,7 +5,7 @@
 ## Table of Contents.
 * [About](#about)
 * [Problem-Solving](#Problem-Solving)
-* [How to](#How to)
+* [How\to](#How\to)
 * [Architecture](#architecture)
 * [Result](#result)
 * [References](#references)
@@ -85,7 +85,7 @@ def contrast(self, image, filter_num):
 상품의 좌표정보가 있는 xml파일과 이미지를 이용하여 Caffe SSD 학습
   
   
-![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/ssd_xml.jpg)
+![grab-landing-page](https://github.com/rib-president/Hide-on-bush/blob/master/sample/ssd_xml.JPG)
   
   
   
